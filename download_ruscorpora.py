@@ -11,7 +11,7 @@ import urllib.request
 
 
 
-def main():
+def main(argv):
     # arguments
     parser = argparse.ArgumentParser(description='Download samples from ruscorpora')
     parser.add_argument('--url', type=str, required=True,
@@ -26,7 +26,7 @@ def main():
     parser.add_argument('-a', '--append', action='store_true', help='append results to output FILE')
     parser.add_argument('-v', '--verbose', action='store_true', help='write verbose log')
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     # check arguments
     try:
@@ -215,5 +215,10 @@ def spaces2sp(s):
 
 
 if __name__ == "__main__":
-    #print(sys.argv)
-    main()
+    main(sys.argv[1:])
+    #main(
+    #    ["--url=https://processing.ruscorpora.ru/search.xml?env=alpha&api=1.0&mycorp=&mysent=&mysize=&mysentsize=&dpp=&spp=&spd=&mydocsize=&mode=main&lang=ru&sort=i_grtagging&nodia=1&text=lexform&req=мешок",
+    #     "--output=result.tsv",
+    #     "-s", "123",
+    #     "-n", "456",])
+
