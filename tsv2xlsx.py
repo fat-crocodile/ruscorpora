@@ -69,5 +69,5 @@ def insert_x_before_odd_and_skip_empty(data, x):
 
 
 if __name__ == "__main__":
-    #main(sys.argv[1:])
-    main(["result.tsv", "result.xlsx"])
+    main(sys.argv[1:])
+    #main(["result.tsv", "result.xlsx"])
